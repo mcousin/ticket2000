@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ticket2000</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div class="row">
+	  	<div class="span3">
+		<h1><%= link_to 'Ticket 2000', root_path , :id	 => 'alwaysBlack'%></h1>
+		<em id="mainSubtitle">Responsive As Hell</em></br>
+		<%= render :partial => "shared/menu_lefthand" %>
+	  	</div>
+	  	<div class="span9">
+			<%= yield %>
+	  	</div>
+	</div>
+
+</body>
+</html>

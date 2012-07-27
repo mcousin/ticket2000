@@ -1,0 +1,12 @@
+</br>
+<p>
+	<%= link_to 'Tickets', tickets_path, :id => 'alwaysBlack'%><br />
+	<%= link_to 'Comments', comments_path, :id => 'alwaysBlack'%><br />
+	<%= link_to 'Tags', tags_path, :id => 'alwaysBlack'%><br />	
+	<% if current_user %>
+	<div class="logout">
+		Angemeldet als: <%= current_user.last_name %><br />
+		<%= link_to "Logout", session_path, :method => :delete %>
+	</div>
+	<% end %>
+</p>

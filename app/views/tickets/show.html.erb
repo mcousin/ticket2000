@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @ticket.subject %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @ticket.status %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ticket.description %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @ticket.tags %>
+</p>
+
+<p>
+  <b>Comments:</b>
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+	<% @ticket.comments.each do |comment| %>
+	<tr>
+	  <td><%= comment.title %></td>
+	  <td><%= comment.comment_text %></td>
+	</tr>
+	<% end %>
+</table>
+
+</p>
+<div class="well">
+	<%= render :partial => "comments/form" %>
+</div>
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
